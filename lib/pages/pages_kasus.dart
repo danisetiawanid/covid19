@@ -8,17 +8,17 @@ import 'package:covid19app/provider/provider_corona.dart';
 
 class KasusPage extends StatelessWidget {
   final List<String> dropdownValues = ["Indonesia"];
-  
+
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
-String formattedDate = DateFormat('d MMMM').format(now);
-    
+    String formattedDate = DateFormat('d MMMM').format(now);
+
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-    value: const SystemUiOverlayStyle(statusBarColor: Color(0xFF2E7D32)),
-    sized: false,
-    child: ListView(
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(statusBarColor: Color(0xFF2E7D32)),
+      sized: false,
+      child: ListView(
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height + 90,
@@ -521,10 +521,6 @@ String formattedDate = DateFormat('d MMMM').format(now);
           )
         ],
       ),
-  )
-      
-      
-    );
+    ));
   }
 }
-
