@@ -69,50 +69,49 @@ class Informasi extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
-
-        Scaffold.of(context).showSnackBar(snackBar);
-      },
+                                showSimpleCustomDialog(context);
+                              },
                               child: Container(
-                              height: MediaQuery.of(context).size.height / 8,
-                              child: Card(
-                                elevation: 6,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(24)),
-                                child: Row(
-                                  children: <Widget>[
-                                    Padding(padding: EdgeInsets.all(10)),
-                                    Container(
-                                        child: CircleAvatar(
-                                            child: Image.asset(
-                                                'images/kenali.png'),
-                                            backgroundColor: Colors.red[50]),
-                                        width: 50,
-                                        height: 50,
-                                        padding: const EdgeInsets.all(
-                                            2.0), // borde width
-                                        decoration: BoxDecoration(
-                                          color: const Color(
-                                              0xFFFFFFFF), // border color
-                                          shape: BoxShape.circle,
-                                        )),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 12),
-                                        child: Text(
-                                          'Mengenal',
-                                          style: TextStyle(fontSize: 18),
-                                        )),
-                                    Spacer(),
-                                    Container(
-                                        margin: EdgeInsets.only(right: 20),
-                                        child: Icon(Icons.keyboard_arrow_right))
-                                  ],
+                                height: MediaQuery.of(context).size.height / 8,
+                                child: Card(
+                                  elevation: 6,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(24)),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Padding(padding: EdgeInsets.all(10)),
+                                      Container(
+                                          child: CircleAvatar(
+                                              child: Image.asset(
+                                                  'images/kenali.png'),
+                                              backgroundColor: Colors.red[50]),
+                                          width: 50,
+                                          height: 50,
+                                          padding: const EdgeInsets.all(
+                                              2.0), // borde width
+                                          decoration: BoxDecoration(
+                                            color: const Color(
+                                                0xFFFFFFFF), // border color
+                                            shape: BoxShape.circle,
+                                          )),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 12),
+                                          child: Text(
+                                            'Mengenal',
+                                            style: TextStyle(fontSize: 18),
+                                          )),
+                                      Spacer(),
+                                      Container(
+                                          margin: EdgeInsets.only(right: 20),
+                                          child:
+                                              Icon(Icons.keyboard_arrow_right))
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                            ),
-                            
-                            Container(
+                            InkWell(
+                              child: Container(
                               height: MediaQuery.of(context).size.height / 8,
                               child: Card(
                                 elevation: 6,
@@ -148,8 +147,12 @@ class Informasi extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            ),
-                            Container(
+                            ),onTap: () {
+                                showSimpleCustomDialog2(context);
+                              },),
+                            
+                            InkWell(
+                              child: Container(
                               height: MediaQuery.of(context).size.height / 8,
                               child: Card(
                                 elevation: 6,
@@ -185,8 +188,12 @@ class Informasi extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            ),
-                            Container(
+                            ),onTap: () {
+                                showSimpleCustomDialog3(context);
+                              },),
+                            
+                            InkWell(
+                              child: Container(
                               height: MediaQuery.of(context).size.height / 8,
                               child: Card(
                                 elevation: 6,
@@ -222,7 +229,10 @@ class Informasi extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            ),
+                            ),onTap: () {
+                                showSimpleCustomDialog4(context);
+                              },),
+                            
                           ],
                         )),
                       )),
@@ -235,3 +245,112 @@ class Informasi extends StatelessWidget {
     ));
   }
 }
+void showSimpleCustomDialog(BuildContext context) {
+        Dialog simpleDialog = Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Container(
+            height: 185,
+            width: 300.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    'Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus yang menyerang sistem pernapasan. Penyakit karena infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan gangguan pada sistem pernapasan, pneumonia akut, sampai kematian.\nsumber : https://www.alodokter.com/virus-corona',
+                    style: TextStyle(),
+                  ),
+                
+                ),
+               
+              ],
+            ),
+          ),
+        );
+        showDialog(
+            context: context, builder: (BuildContext context) => simpleDialog);
+    }
+    void showSimpleCustomDialog2(BuildContext context) {
+        Dialog simpleDialog = Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Container(
+            height: 250,
+            width: 300.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    '1. Hindari bepergian ke tempat-tempat umum yang ramai pengunjung (social distancing).\n2. Gunakan masker saat beraktivitas di tempat umum atau keramaian.\n3. Rutin mencuci tangan dengan air dan sabun atau hand sanitizer setelah beraktivitas di luar rumah.\n4. Meningkatkan daya tahan tubuh dengan pola hidup sehat.\n5. Jangan menyentuh mata, mulut, dan hidung sebelum mencuci tangan.\nsumber : https://www.alodokter.com/virus-corona',
+                    style: TextStyle(),
+                  ),
+                
+                ),
+               
+              ],
+            ),
+          ),
+        );
+        showDialog(
+            context: context, builder: (BuildContext context) => simpleDialog);
+    }
+    
+    void showSimpleCustomDialog4(BuildContext context) {
+        Dialog simpleDialog = Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Container(
+            height: 250,
+            width: 300.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    '1. Merujuk penderita COVID-19 untuk menjalani perawatan dan karatina di rumah sakit yang ditunjuk\n2. Memberikan obat pereda demam dan nyeri yang aman dan sesuai kondisi penderita\n3. Menganjurkan penderita COVID-19 untuk melakukan isolasi mandiri dan istirahat yang cukup\n4. Menganjurkan penderita COVID-19 untuk banyak minum air putih untuk menjaga kadar cairan tubuh\nsumber : https://www.alodokter.com/virus-corona',
+                    style: TextStyle(),
+                  ),
+                
+                ),
+               
+              ],
+            ),
+          ),
+        );
+        showDialog(
+            context: context, builder: (BuildContext context) => simpleDialog);
+    }
+    void showSimpleCustomDialog3(BuildContext context) {
+        Dialog simpleDialog = Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Container(
+            height: 155,
+            width: 300.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    'Sampai saat ini, belum ada vaksin untuk mencegah infeksi virus Corona atau COVID-19. Oleh sebab itu, cara pencegahan yang terbaik adalah dengan menghindari faktor-faktor yang bisa menyebabkan Anda terinfeksi virus ini\nsumber : https://www.alodokter.com/virus-corona',
+                    style: TextStyle(),
+                  ),
+                
+                ),
+               
+              ],
+            ),
+          ),
+        );
+        showDialog(
+            context: context, builder: (BuildContext context) => simpleDialog);
+    }

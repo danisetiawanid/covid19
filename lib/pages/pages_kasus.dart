@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:covid19app/provider/corona_provider.dart';
+import 'package:covid19app/provider/provider_corona.dart';
 
 class KasusPage extends StatelessWidget {
   final List<String> dropdownValues = ["Indonesia"];

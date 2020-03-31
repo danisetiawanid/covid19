@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-
 class DetailWorldModel extends StatefulWidget {
   _DetailWorldModelState createState() => _DetailWorldModelState();
 }
@@ -42,7 +40,7 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
             children: snapshot.data
                 .map((data) => Container(
                       height: MediaQuery.of(context).size.height / 3.6,
-                      padding: EdgeInsets.all(14),
+                      padding: EdgeInsets.all(16),
                       child: Card(
                         elevation: 6,
                         shape: RoundedRectangleBorder(
@@ -56,7 +54,9 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
                                 child: Text(
                                   data.negara.toString(),
                                   style: TextStyle(
-                                      fontSize: 20, color: Colors.black87),
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
                                 )),
                             Column(
                               children: <Widget>[

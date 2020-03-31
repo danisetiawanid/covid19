@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Bantuan extends StatelessWidget {
   @override
@@ -69,26 +70,32 @@ class Bantuan extends StatelessWidget {
                                         fontSize: 20,
                                         fontFamily: 'Kanit'),
                                   ),
-                                  
                                   Container(
-                                    padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                                    child:Text(
-                                    'Jika anda mengalami gejala gejala seperti ini',
-                                    style: TextStyle(
-                                    ),
-                                  ), 
-                                  ),
-                                   Container(
-                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                     child: Text(
+                                      padding:
+                                          EdgeInsets.fromLTRB(0, 10, 10, 10),
+                                      child: Text.rich(
+                                        TextSpan(
+                                          text: 'Jika anda mengalami gejala - gejala  ',
+                                  
+                                          children: <TextSpan>[
+                                            TextSpan(
+                                                text: 'seperti ini',
+                                                style: TextStyle(
+                                                  color: Colors.green,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                )),
+                                            // can add more TextSpans here...
+                                          ],
+                                        ),
+                                      )),
+                                  Container(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                    child: Text(
                                       'silahkan hubungi kontak di bawah ini',
-                                      style: TextStyle(
-                                       
-                                      ),
-                                     ),
-                                   ),
-                                   
-      
+                                      style: TextStyle(),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -122,17 +129,30 @@ class Bantuan extends StatelessWidget {
                                           style: TextStyle(fontSize: 18),
                                         )),
                                     Spacer(),
-
-                                    FlatButton(onPressed: null, child:Container(
-                                      height: 30,
-                                      width: 90,
-                                      margin: EdgeInsets.only(right: 10),
-                                       decoration: BoxDecoration(
-                                         borderRadius: BorderRadius.circular(20),
-                                         color: Colors.green,),
-                                         child: Center(child: Text('Panggil',style: TextStyle(color: Colors.white),)),
-                                    ))
-                                    
+                                    Center(
+                                      child: FlatButton(
+                                          onPressed: () {
+                                            FlutterOpenWhatsapp
+                                                .sendSingleMessage(
+                                                    "6281133399000", "Corona");
+                                          },
+                                          child: Container(
+                                            height: 30,
+                                            width: 90,
+                                            margin: EdgeInsets.only(right: 10),
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              color: Colors.green,
+                                            ),
+                                            child: Center(
+                                                child: Text(
+                                              'Panggil ',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            )),
+                                          )),
+                                    )
                                   ],
                                 ),
                               ),
@@ -168,7 +188,7 @@ class Bantuan extends StatelessWidget {
                                         )),
                                     Spacer(),
                                     Container(
-                                        margin: EdgeInsets.only(right: 20),
+                                        margin: EdgeInsets.only(right: 10),
                                         child: Icon(Icons.keyboard_arrow_right))
                                   ],
                                 ),
@@ -185,8 +205,8 @@ class Bantuan extends StatelessWidget {
                                     Padding(padding: EdgeInsets.all(10)),
                                     Container(
                                         child: CircleAvatar(
-                                            child:
-                                                Image.asset('images/hospital.png'),
+                                            child: Image.asset(
+                                                'images/hospital.png'),
                                             backgroundColor: Colors.red[50]),
                                         width: 50,
                                         height: 50,
@@ -200,12 +220,12 @@ class Bantuan extends StatelessWidget {
                                     Container(
                                         margin: EdgeInsets.only(left: 12),
                                         child: Text(
-                                          'Rumah Sakit Terdekat',
+                                          'Rumah Sakit Rujukan',
                                           style: TextStyle(fontSize: 18),
                                         )),
                                     Spacer(),
                                     Container(
-                                        margin: EdgeInsets.only(right: 20),
+                                        margin: EdgeInsets.only(right: 10),
                                         child: Icon(Icons.keyboard_arrow_right))
                                   ],
                                 ),

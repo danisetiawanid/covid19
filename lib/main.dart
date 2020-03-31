@@ -3,7 +3,7 @@ import 'package:covid19app/pages/pages_kasus.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19app/pages/pages_informasi.dart';
 import 'package:covid19app/pages/page_bantuan.dart';
-import 'package:covid19app/provider/corona_provider.dart';
+import 'package:covid19app/provider/provider_corona.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(new MyApp());

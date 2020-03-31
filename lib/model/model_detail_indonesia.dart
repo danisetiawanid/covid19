@@ -54,7 +54,7 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
                                 padding: EdgeInsets.only(left: 18, top: 4),
                                 child: Text(
                                   data.provinsi.toString(),
-                                  style: TextStyle(fontSize: 20, color: Colors.black87),
+                                  style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
                                 )),
                             Column(
                               children: <Widget>[
