@@ -49,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.library_books), title: Text('Informasi')),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add_to_queue), title: Text('Bantuan')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), title: Text('About'))
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.account_circle), title: Text('About'))
           ],
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,

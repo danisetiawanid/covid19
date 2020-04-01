@@ -75,8 +75,8 @@ class Bantuan extends StatelessWidget {
                                           EdgeInsets.fromLTRB(0, 10, 10, 10),
                                       child: Text.rich(
                                         TextSpan(
-                                          text: 'Jika anda mengalami gejala - gejala  ',
-                                  
+                                          text:
+                                              'Jika anda mengalami gejala - gejala  ',
                                           children: <TextSpan>[
                                             TextSpan(
                                                 text: 'seperti ini',
@@ -157,77 +157,91 @@ class Bantuan extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Container(
-                              height: MediaQuery.of(context).size.height / 8,
-                              child: Card(
-                                elevation: 6,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(24)),
-                                child: Row(
-                                  children: <Widget>[
-                                    Padding(padding: EdgeInsets.all(10)),
-                                    Container(
-                                        child: CircleAvatar(
-                                            child:
-                                                Image.asset('images/chat.png'),
-                                            backgroundColor: Colors.blue[50]),
-                                        width: 50,
-                                        height: 50,
-                                        padding: const EdgeInsets.all(
-                                            2.0), // borde width
-                                        decoration: BoxDecoration(
-                                          color: const Color(
-                                              0xFFFFFFFF), // border color
-                                          shape: BoxShape.circle,
-                                        )),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 12),
-                                        child: Text(
-                                          'Konsultasi Dokter',
-                                          style: TextStyle(fontSize: 18),
-                                        )),
-                                    Spacer(),
-                                    Container(
-                                        margin: EdgeInsets.only(right: 10),
-                                        child: Icon(Icons.keyboard_arrow_right))
-                                  ],
+                            InkWell(
+                              onTap: () {
+                                FlutterOpenWhatsapp.sendSingleMessage(
+                                    "6281133399000", "Corona");
+                              },
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 8,
+                                child: Card(
+                                  elevation: 6,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(24)),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Padding(padding: EdgeInsets.all(10)),
+                                      Container(
+                                          child: CircleAvatar(
+                                              child: Image.asset(
+                                                  'images/chat.png'),
+                                              backgroundColor: Colors.blue[50]),
+                                          width: 50,
+                                          height: 50,
+                                          padding: const EdgeInsets.all(
+                                              2.0), // borde width
+                                          decoration: BoxDecoration(
+                                            color: const Color(
+                                                0xFFFFFFFF), // border color
+                                            shape: BoxShape.circle,
+                                          )),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 12),
+                                          child: Text(
+                                            'Konsultasi Dokter',
+                                            style: TextStyle(fontSize: 18),
+                                          )),
+                                      Spacer(),
+                                      Container(
+                                          margin: EdgeInsets.only(right: 10),
+                                          child:
+                                              Icon(Icons.keyboard_arrow_right))
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              height: MediaQuery.of(context).size.height / 8,
-                              child: Card(
-                                elevation: 6,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(24)),
-                                child: Row(
-                                  children: <Widget>[
-                                    Padding(padding: EdgeInsets.all(10)),
-                                    Container(
-                                        child: CircleAvatar(
-                                            child: Image.asset(
-                                                'images/hospital.png'),
-                                            backgroundColor: Colors.red[50]),
-                                        width: 50,
-                                        height: 50,
-                                        padding: const EdgeInsets.all(
-                                            2.0), // borde width
-                                        decoration: BoxDecoration(
-                                          color: const Color(
-                                              0xFFFFFFFF), // border color
-                                          shape: BoxShape.circle,
-                                        )),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 12),
-                                        child: Text(
-                                          'Rumah Sakit Rujukan',
-                                          style: TextStyle(fontSize: 18),
-                                        )),
-                                    Spacer(),
-                                    Container(
-                                        margin: EdgeInsets.only(right: 10),
-                                        child: Icon(Icons.keyboard_arrow_right))
-                                  ],
+                            InkWell(
+                              onTap: () {
+                                 FlutterOpenWhatsapp.sendSingleMessage(
+                                    "6281133399000", "Corona");
+                              },
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 8,
+                                child: Card(
+                                  elevation: 6,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(24)),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Padding(padding: EdgeInsets.all(10)),
+                                      Container(
+                                          child: CircleAvatar(
+                                              child: Image.asset(
+                                                  'images/hospital.png'),
+                                              backgroundColor: Colors.red[50]),
+                                          width: 50,
+                                          height: 50,
+                                          padding: const EdgeInsets.all(
+                                              2.0), // borde width
+                                          decoration: BoxDecoration(
+                                            color: const Color(
+                                                0xFFFFFFFF), // border color
+                                            shape: BoxShape.circle,
+                                          )),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 12),
+                                          child: Text(
+                                            'Rumah Sakit Rujukan',
+                                            style: TextStyle(fontSize: 18),
+                                          )),
+                                      Spacer(),
+                                      Container(
+                                          margin: EdgeInsets.only(right: 10),
+                                          child:
+                                              Icon(Icons.keyboard_arrow_right))
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
