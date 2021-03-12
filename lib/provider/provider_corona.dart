@@ -11,9 +11,9 @@ class CoronaProvider with ChangeNotifier {
   DetailIndonesiaModel detailIndo;
 
   Future<void> getData() async {
-    final apicovid = 'https://kawalcovid19.harippe.id/api/summary';
+    final apicovid = 'https://api.kawalcorona.com/indonesia/';
     final response = await http.get(apicovid);
-    final result = json.decode(response.body) as Map<String, dynamic>;
+    final result = json.decode(response.body);
 
     final worldPositive = 'https://api.kawalcorona.com/positif/';
     final responsePositive = await http.get(worldPositive);
@@ -34,10 +34,9 @@ class CoronaProvider with ChangeNotifier {
     );
 
     summary = IndonesiaModel(
-        confirmed: result['confirmed']['value'],
-        recovered: result['recovered']['value'],
-        deaths: result['deaths']['value'],
-        
+      confirmed: result[0]['positif'],
+      recovered: result[0]['sembuh'],
+      deaths: result[0]['meninggal'],
     );
     notifyListeners();
   }

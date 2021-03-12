@@ -1,9 +1,11 @@
 class IndonesiaModel {
-  final int confirmed;
-  final int recovered;
-  final int deaths;
-  
+  final String confirmed;
+  final String recovered;
+  final String deaths;
 
-  IndonesiaModel(
-      {this.confirmed, this.recovered, this.deaths,});
+  IndonesiaModel({
+    this.confirmed,
+    this.recovered,
+    this.deaths,
+  });
 }

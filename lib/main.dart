@@ -1,4 +1,3 @@
-import 'package:covid19app/pages/pages_aboutdev.dart';
 import 'package:covid19app/pages/pages_kasus.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19app/pages/pages_informasi.dart';
@@ -14,8 +13,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CoronaProvider())],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Covid 19',
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
         home: new MyHomePage(),
       ),
     );
@@ -30,7 +32,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-  final _layoutPage = [KasusPage(), Informasi(), Bantuan(),Aboutdev()];
+  final _layoutPage = [
+    KasusPage(),
+    Informasi(),
+    Bantuan(),
+  ];
   void _onTabItem(int index) {
     setState(() {
       _selectedIndex = index;
@@ -43,14 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
         body: _layoutPage.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.wb_sunny), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.wb_sunny), title: Text('Kasus')),
+                icon: Icon(Icons.library_books), label: 'Informasi'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.library_books), title: Text('Informasi')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add_to_queue), title: Text('Bantuan')),
-            // BottomNavigationBarItem(
-            //     icon: Icon(Icons.account_circle), title: Text('About'))
+                icon: Icon(Icons.add_to_queue), label: 'Bantuan'),
           ],
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,

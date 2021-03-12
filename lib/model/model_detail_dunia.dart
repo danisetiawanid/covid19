@@ -86,7 +86,7 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
                                           style: TextStyle(
                                               color: Colors.orange,
                                               fontFamily: 'Kanit',
-                                              fontSize: 34,
+                                              fontSize: 24,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Text('Kasus Positif',
@@ -113,7 +113,7 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
                                           style: TextStyle(
                                               color: Colors.green,
                                               fontFamily: 'Kanit',
-                                              fontSize: 34,
+                                              fontSize: 24,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Text('Sehat',
@@ -142,7 +142,7 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
                                           style: TextStyle(
                                               color: Colors.red,
                                               fontFamily: 'Kanit',
-                                              fontSize: 34,
+                                              fontSize: 24,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Text('Meninggal',
