@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Bantuan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(statusBarColor: Color(0xFF2E7D32)),
-        sized: false,
+      body: SafeArea(
         child: ListView(
           children: <Widget>[
             Container(

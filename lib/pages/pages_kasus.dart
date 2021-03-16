@@ -1,6 +1,7 @@
 import 'package:covid19app/model/model_detail_dunia.dart';
 import 'package:covid19app/model/model_detail_indonesia.dart';
 import 'package:flutter/material.dart';
+
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:covid19app/provider/provider_corona.dart';
