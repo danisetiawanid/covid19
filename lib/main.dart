@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:covid19app/pages/pages_informasi.dart';
 import 'package:covid19app/pages/page_bantuan.dart';
 import 'package:covid19app/provider/provider_corona.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(new MyApp());
@@ -12,13 +13,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CoronaProvider())],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Covid 19',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.green[700],
+          statusBarIconBrightness: Brightness.light,
         ),
-        home: new MyHomePage(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Covid 19',
+          theme: ThemeData(
+            primarySwatch: Colors.green,
+          ),
+          home: new MyHomePage(),
+        ),
       ),
     );
   }

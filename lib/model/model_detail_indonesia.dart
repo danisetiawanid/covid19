@@ -7,9 +7,11 @@ class DetailIndonesiaModel extends StatefulWidget {
 }
 
 class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
-  final String uri = 'https://api.kawalcorona.com/indonesia/provinsi/';
+  final String apidetailindonesia =
+      'https://api.kawalcorona.com/indonesia/provinsi/';
 
   Future<List<DetaiIndonesiaModel>> _fetchUsers() async {
+    final uri = Uri.tryParse(apidetailindonesia);
     var response = await http.get(uri);
 
     if (response.statusCode == 200) {
@@ -54,7 +56,10 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
                                 padding: EdgeInsets.only(left: 18, top: 4),
                                 child: Text(
                                   data.provinsi.toString(),
-                                  style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
                                 )),
                             Column(
                               children: <Widget>[
@@ -64,7 +69,6 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
                                   children: <Widget>[
                                     Column(
                                       children: <Widget>[
-                                        
                                         Container(
                                             child: CircleAvatar(
                                                 child: Image.asset(
@@ -94,7 +98,6 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
                                     ),
                                     Column(
                                       children: <Widget>[
-                                       
                                         Container(
                                             child: CircleAvatar(
                                                 child: Image.asset(
@@ -122,7 +125,6 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
                                     ),
                                     Column(
                                       children: <Widget>[
-                                       
                                         Container(
                                             child: CircleAvatar(
                                                 child: Image.asset(

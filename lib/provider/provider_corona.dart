@@ -12,19 +12,23 @@ class CoronaProvider with ChangeNotifier {
 
   Future<void> getData() async {
     final apicovid = 'https://api.kawalcorona.com/indonesia/';
-    final response = await http.get(apicovid);
+    final uri = Uri.tryParse(apicovid);
+    final response = await http.get(uri);
     final result = json.decode(response.body);
 
     final worldPositive = 'https://api.kawalcorona.com/positif/';
-    final responsePositive = await http.get(worldPositive);
+    final uriWorldPositive = Uri.tryParse(worldPositive);
+    final responsePositive = await http.get(uriWorldPositive);
     final resultPositive = json.decode(responsePositive.body);
 
     final worldRecovered = 'https://api.kawalcorona.com/sembuh/';
-    final responseRecovered = await http.get(worldRecovered);
+    final uriWorldRecovered = Uri.tryParse(worldRecovered);
+    final responseRecovered = await http.get(uriWorldRecovered);
     final resultRecovered = json.decode(responseRecovered.body);
 
     final worldDeaths = 'https://api.kawalcorona.com/meninggal/';
-    final responseDeaths = await http.get(worldDeaths);
+    final uriWorldDeaths = Uri.tryParse(worldDeaths);
+    final responseDeaths = await http.get(uriWorldDeaths);
     final resultDeaths = json.decode(responseDeaths.body);
 
     world = WorldModel(

@@ -7,9 +7,10 @@ class DetailWorldModel extends StatefulWidget {
 }
 
 class _DetailWorldModelState extends State<DetailWorldModel> {
-  final String uri = 'https://api.kawalcorona.com/';
+  final String apidetaildunia = 'https://api.kawalcorona.com/';
 
   Future<List<DetaiWorldModel>> _fetchUsers() async {
+    final uri = Uri.tryParse(apidetaildunia);
     var response = await http.get(uri);
 
     if (response.statusCode == 200) {
