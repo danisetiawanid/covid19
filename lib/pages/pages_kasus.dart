@@ -67,8 +67,7 @@ class KasusPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: <Widget>[
                               Container(
-                                width: MediaQuery.of(context).size.width / 1.2,
-                                padding: EdgeInsets.symmetric(horizontal: 32.0),
+                                padding: EdgeInsets.symmetric(horizontal: 24),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
@@ -87,7 +86,10 @@ class KasusPage extends StatelessWidget {
                                     onChanged: (String value) {},
                                     isExpanded: true,
                                     value: dropdownValues.first,
-                                    icon: Image.asset('images/arrow_down.png'),
+                                    icon: Icon(
+                                      Icons.arrow_drop_down,
+                                      color: Colors.green,
+                                    ),
                                   ),
                                 ),
                               ),

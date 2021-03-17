@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+// For Flutter applications, you'll most likely want to use
+// the url_launcher package.
+import 'package:url_launcher/url_launcher.dart';
 
 class Bantuan extends StatelessWidget {
+  launchWhatsApp() async {
+    final link = WhatsAppUnilink(
+      phoneNumber: '+6281133399000',
+      text: "Corona",
+    );
+    // Convert the WhatsAppUnilink instance to a string.
+    // Use either Dart's string interpolation or the toString() method.
+    // The "launch" method is part of "url_launcher".
+    await launch('$link');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,10 +147,7 @@ class Bantuan extends StatelessWidget {
                                         // ignore: deprecated_member_use
                                         child: FlatButton(
                                             onPressed: () {
-                                              FlutterOpenWhatsapp
-                                                  .sendSingleMessage(
-                                                      "6281133399000",
-                                                      "Corona");
+                                              launchWhatsApp();
                                             },
                                             child: Container(
                                               height: 30,
@@ -162,8 +173,7 @@ class Bantuan extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  FlutterOpenWhatsapp.sendSingleMessage(
-                                      "6281133399000", "Corona");
+                                  launchWhatsApp();
                                 },
                                 child: Container(
                                   height:
@@ -209,8 +219,7 @@ class Bantuan extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  FlutterOpenWhatsapp.sendSingleMessage(
-                                      "6281133399000", "Corona");
+                                  launchWhatsApp();
                                 },
                                 child: Container(
                                   height:
