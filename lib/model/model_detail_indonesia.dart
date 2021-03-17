@@ -32,6 +32,7 @@ class _DetailIndonesiaModelState extends State<DetailIndonesiaModel> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Data Per Provinsi'),
+        brightness: Brightness.dark,
       ),
       body: FutureBuilder<List<DetaiIndonesiaModel>>(
         future: _fetchUsers(),

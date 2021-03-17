@@ -30,6 +30,7 @@ class _DetailWorldModelState extends State<DetailWorldModel> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Data Per Negara'),
+        brightness: Brightness.dark,
       ),
       body: FutureBuilder<List<DetaiWorldModel>>(
         future: _fetchUsers(),
